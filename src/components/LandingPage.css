@@ -1,0 +1,252 @@
+/*
+ * Updated styles for the 2025â€‘ready LandingPage component.
+ *
+ * This palette uses warm neutrals and rich accents to create a modern yet
+ * inviting feel. The header contrasts sharply with the light background to
+ * anchor the page, while feature cards and testimonials use soft tones for
+ * comfortable reading. Rounded corners and subtle shadows maintain a friendly,
+ * approachable aesthetic. Adjust measurements as needed for your own
+ * typography scale.
+ */
+
+/* Base container: sets the global font, colours and minimum height */
+.landing-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: #EEE5DF; /* ivory/beige from the poster */
+  color: #385739;            /* updated dark green for primary text */
+  min-height: 100vh;
+}
+
+/* Header */
+/* We no longer render a header bar; the hero contains the main call to action. */
+
+/* Hero card replicating the layout in the supplied mockup */
+.hero-card {
+  background-color: #F8F2EE;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 980px;
+}
+
+.hero-content {
+  flex: 1 1 420px;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  margin: 0 0 2rem;
+  max-width: 450px;
+}
+
+/* CTA button styling */
+/* Primary callâ€‘toâ€‘action button styling.  The default colours are
+   overridden inline in the component to allow theme switching (e.g. when
+   accent colours change), but we provide fallback values here. */
+.cta-button {
+  background-color: #D58BBD;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #C377AB;
+}
+
+.hero-clock {
+  flex: 0 0 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Features */
+/* Features section: responsive grid of cards */
+.features-section {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.feature-wrapper {
+  flex: 1 1 280px;
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Icon wrapper retains similar styling to the original design */
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  background-color: #F4E8F1; /* a very light pink backdrop for icons */
+  color: #385739;            /* new green for icon strokes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  color: #385739;
+  margin: 0;
+}
+
+/* Testimonials */
+/* Testimonials section styling */
+.testimonials-section {
+  max-width: 980px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #385739;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.testimonial-wrapper {
+  flex: 1 1 280px;
+  max-width: 340px;
+}
+
+.testimonial-card {
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-align: left;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  color: #D58BBD;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Quote and author styling within testimonial cards */
+.testimonial-quote {
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+  color: #385739;
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #385739;
+  margin: 0;
+}
+
+/* Analog clock */
+.analog-clock {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+}
+/* Analog clock styling */
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Use a pink border sampled from the poster and a neutral face */
+  border: 6px solid #D58BBD; /* pink border */
+  border-radius: 50%;
+  background-color: #F8F2EE; /* light offâ€‘white clock face */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+ .clock-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  background-color: #385739;
+ }
+.clock-hand.hour {
+  width: 4px;
+  height: 35%;
+  border-radius: 2px;
+}
+.clock-hand.minute {
+  width: 3px;
+  height: 45%;
+  border-radius: 2px;
+}
+ .clock-hand.second {
+  width: 2px;
+  height: 50%;
+  background-color: #385739; /* all clock hands are olive green */
+  border-radius: 2px;
+ }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Stack the hero contents vertically on smaller screens */
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-clock {
+    margin-top: 2rem;
+  }
+  .features-section {
+    flex-direction: column;
+  }
+  .testimonials-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

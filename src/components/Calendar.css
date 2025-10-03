@@ -1,0 +1,6 @@
+/* Calendar.css */
+.calendar-day.today {
+  background: #718BBC;
+  color: white;
+  border-radius: 50%;
+}

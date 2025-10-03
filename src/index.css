@@ -1,0 +1,41 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 기본 폰트와 색상 설정 */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* morph-shape 애니메이션 정의 */
+@keyframes morph-shape {
+  0%, 100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  20% {
+    border-radius: 55% 35% 60% 40% / 45% 65% 40% 60%;
+  }
+  40% {
+    border-radius: 35% 65% 45% 55% / 60% 35% 70% 40%;
+  }
+  60% {
+    border-radius: 65% 25% 50% 50% / 35% 55% 35% 65%;
+  }
+  80% {
+    border-radius: 40% 60% 55% 45% / 60% 40% 55% 45%;
+  }
+}
+
+/* 필요한 경우 추가 전역 스타일 */
+/* Tailwind 확장이 안 먹힐 때를 대비한 커스텀 색상 클래스 */
+.bg-light     { background-color: #F3F1EE; }
+.bg-accent    { background-color: #E0D7DA; }
+.bg-secondary { background-color: #A3BCCF; }
+.bg-pink      { background-color: #EAC4D5; }
+.bg-primary   { background-color: #718BBC; }
+
+.text-primary   { color: #718BBC; }
+.text-white     { color: #FFFFFF; }
+
+.border-primary { border-color: #718BBC; }
