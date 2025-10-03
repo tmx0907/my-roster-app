@@ -1,8 +1,10 @@
 import React from 'react';
-import LandingPage from './components/LandingPage';
+import OCRUpload from './components/OCRUpload';
 
-function App() {
-  return <LandingPage />;
+export default function App() {
+  return (
+    <div className="min-h-screen p-6 bg-[#f3f1ee]">
+      <OCRUpload />
+    </div>
+  );
 }
-
-export default App;

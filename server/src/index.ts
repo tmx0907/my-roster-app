@@ -1,23 +1,19 @@
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import morgan from "morgan";
-import dotenv from "dotenv";
-import authRoutes from "./routes/auth";
-import rosterRoutes from "./routes/roster";
-
-dotenv.config();
+import express from 'express';
+import cors from 'cors';
+import ocrRoutes from './routes/ocr.routes';
 
 const app = express();
-app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN || "http://localhost:5173", credentials: true }));
-app.use(express.json());
-app.use(morgan("dev"));
 
-app.use("/auth", authRoutes);
-app.use("/roster", rosterRoutes);
+app.use(cors());
+app.use(express.json({ limit: '10mb' }));
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true });
+});
+
+app.use('/api', ocrRoutes);
+
+const PORT = process.env.PORT || 8787;
+app.listen(PORT, () => {
+  console.log(`Server listening on http://localhost:${PORT}`);
 });
